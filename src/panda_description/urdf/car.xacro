@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="car" xmlns:xacro="http://ros.org/wiki/xacro">
+  
+  <xacro:include filename="$(find moveit_resources_panda_description)/urdf/robot.gazebo.xacro" /> 
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0158429330452572 -0.0327073918217232 -0.00649999999999993"
+        rpy="0 0 0" />
+      <mass
+        value="0.120489823272946" />
+      <inertia
+        ixx="4.17113752947246E-05"
+        ixy="1.74813898344108E-05"
+        ixz="-1.94817577868489E-20"
+        iyy="8.20514271198057E-05"
+        iyz="3.3881317890172E-21"
+        izz="7.48856120486068E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tky/carbot_ws/src/panda_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tky/carbot_ws/src/panda_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="rbw">
+    <inertial>
+      <origin
+        xyz="0 -0.013042 -3.4694E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0086915" />
+      <inertia
+        ixx="6.1241E-07"
+        ixy="4.1359E-25"
+        ixz="-3.1019E-24"
+        iyy="9.2466E-07"
+        iyz="5.294E-23"
+        izz="6.1241E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tky/carbot_ws/src/panda_description/meshes/rbw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tky/carbot_ws/src/panda_description/meshes/rbw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rj"
+    type="continuous">
+    <origin
+      xyz="0.0400188760612179 -0.0510929501868593 -0.0277499999999999"
+      rpy="1.5707963267949 0 -0.295830428170462" />
+    <parent
+      link="base_link" />
+    <child
+      link="rbw" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="rfw">
+    <inertial>
+      <origin
+        xyz="1.3878E-17 -0.013042 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0086915" />
+      <inertia
+        ixx="6.1241E-07"
+        ixy="-1.2801E-39"
+        ixz="-1.1336E-39"
+        iyy="9.2466E-07"
+        iyz="0"
+        izz="6.1241E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tky/carbot_ws/src/panda_description/meshes/rfw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tky/carbot_ws/src/panda_description/meshes/rfw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rfj"
+    type="continuous">
+    <origin
+      xyz="-0.0131673700892644 -0.0335651659452526 -0.02775"
+      rpy="1.5707963267949 0 -0.318346054228087" />
+    <parent
+      link="base_link" />
+    <child
+      link="rfw" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="lbw">
+    <inertial>
+      <origin
+        xyz="0 -0.00054245 -6.9389E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0086915" />
+      <inertia
+        ixx="6.1241E-07"
+        ixy="-1.2801E-39"
+        ixz="-1.1336E-39"
+        iyy="9.2466E-07"
+        iyz="-5.294E-23"
+        izz="6.1241E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tky/carbot_ws/src/panda_description/meshes/lbw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tky/carbot_ws/src/panda_description/meshes/lbw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lj"
+    type="continuous">
+    <origin
+      xyz="0.0400188760612179 -0.0510929501868592 0.0272500000000001"
+      rpy="-1.5707963267949 0 -0.318346054228087" />
+    <parent
+      link="base_link" />
+    <child
+      link="lbw" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="lfw">
+    <inertial>
+      <origin
+        xyz="-1.3878E-17 -0.00054245 3.4694E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0086915" />
+      <inertia
+        ixx="6.1241E-07"
+        ixy="-1.2801E-39"
+        ixz="-1.1336E-39"
+        iyy="9.2466E-07"
+        iyz="-2.647E-23"
+        izz="6.1241E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tky/carbot_ws/src/panda_description/meshes/lfw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tky/carbot_ws/src/panda_description/meshes/lfw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lfj"
+    type="continuous">
+    <origin
+      xyz="-0.0131673700892644 -0.0335651659452526 0.02725"
+      rpy="-1.5707963267949 0 -0.318346054228087" />
+    <parent
+      link="base_link" />
+    <child
+      link="lfw" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="pusher">
+    <inertial>
+      <origin
+        xyz="-0.037239 -0.0099261 -0.013177"
+        rpy="0 0 0" />
+      <mass
+        value="0.064376" />
+      <inertia
+        ixx="1.8137E-05"
+        ixy="-5.853E-06"
+        ixz="7.8039E-07"
+        iyy="2.436E-05"
+        iyz="4.323E-07"
+        izz="2.4501E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tky/carbot_ws/src/panda_description/meshes/cpusher.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/tky/carbot_ws/src/panda_description/meshes/cpusher.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="push_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="pusher" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.57"
+      upper="1.57"
+      effort="100"
+      velocity="2.01" />
+  </joint>
+
+  <gazebo>
+      <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+            <parameters>$(find config)/config/ros2_controllers.yaml</parameters>
+            <robot_param_node>robot_state_publisher</robot_param_node>
+            <robotParam>robot_description</robotParam>
+      </plugin>
+  </gazebo>
+
+  <transmission name="pusher_Link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="push_joint">
+    <hardwareInterface>PositionJointInterface</hardwareInterface></joint>
+    <actuator name="push_Link_motor">
+    <hardwareInterface>PositionJointInterface</hardwareInterface> 
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+        <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+    <joint name="push_joint">
+        <command_interface name="position"/>
+        <state_interface name="position">
+            <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+</robot>

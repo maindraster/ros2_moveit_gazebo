@@ -1,0 +1,4 @@
+# Default initial positions for car's ros2_control fake system
+
+initial_positions:
+  push_joint: 0

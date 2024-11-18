@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<robot>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+
+  <gazebo reference="lfw">
+    <mu1>1000000</mu1>
+    <mu2>1000000</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>1.0</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <gazebo reference="rfw">
+    <mu1>1000000</mu1>
+    <mu2>1000000</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>1.0</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <gazebo reference="lbw">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <kp>500000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>1.0</maxVel>
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <gazebo reference="rbw">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <kp>500000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>1.0</maxVel>
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="mybot_controller" filename="libgazebo_ros_diff_drive.so">
+      <odometryTopic>odom</odometryTopic>
+      <odometry_frame>odom</odometry_frame>
+      <odometrySource>world</odometrySource>
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+      <robot_base_frame>base_link</robot_base_frame>
+      <updateRate>30</updateRate>
+      <num_wheel_pairs>2</num_wheel_pairs>
+      <left_joint>lj</left_joint>
+      <right_joint>rj</right_joint>
+      <left_joint>lfj</left_joint>
+      <right_joint>rfj</right_joint>
+      <wheel_separation>0.5</wheel_separation>
+      <wheel_separation>0.5</wheel_separation>
+      <wheel_diameter>0.12</wheel_diameter>
+      <wheel_diameter>0.12</wheel_diameter>
+      <wheelAcceleration>10</wheelAcceleration>
+      <max_wheel_torque>100000</max_wheel_torque>
+    </plugin>
+  </gazebo>
+</robot>
